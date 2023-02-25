@@ -57,7 +57,7 @@ async  def  cb_get_all_product(callback: types.CallbackQuery):
 @dp.callback_query_handler(text='add_new_product')
 async  def cb_add_new_product(callback:types.CallbackQuery)-> None:
     await callback.message.answer('Добавляй')
-vc
+
     await Form.word.set()
 
 @dp.message_handler(state=Form.word)
@@ -76,7 +76,7 @@ async def user_register(message: types.Message):
     await message.answer("Введите текст для перевода")
     await Form.text.set()
 
-
+рр
 @dp.message_handler(state=Form.text)
 async def get_username(message: types.Message, state: FSMContext):
     await state.update_data(text=message.text)
