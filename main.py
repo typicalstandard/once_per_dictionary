@@ -57,7 +57,7 @@ async  def  cb_get_all_product(callback: types.CallbackQuery):
 @dp.callback_query_handler(text='add_new_product')
 async  def cb_add_new_product(callback:types.CallbackQuery)-> None:
     await callback.message.answer('Добавляй')
-
+vc
     await Form.word.set()
 
 @dp.message_handler(state=Form.word)
