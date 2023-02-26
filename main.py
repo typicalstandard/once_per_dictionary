@@ -11,15 +11,13 @@ from aiogram.utils import executor
 from googletrans import Translator,LANGUAGES
 from keyboard import get_start_ikb
 from langdetect import detect
-
+from config import API_TOKEN
 import db
 import gg
 
 translator = Translator()
 
 logging.basicConfig(level=logging.INFO)
-
-API_TOKEN = '5853218890:AAGCcrwF6XAWLvMFlx-PjUtd58BnEiClbzg'
 
 
 bot = Bot(token=API_TOKEN)
@@ -76,7 +74,6 @@ async def user_register(message: types.Message):
     await message.answer("Введите текст для перевода")
     await Form.text.set()
 
-рр
 @dp.message_handler(state=Form.text)
 async def get_username(message: types.Message, state: FSMContext):
     await state.update_data(text=message.text)
